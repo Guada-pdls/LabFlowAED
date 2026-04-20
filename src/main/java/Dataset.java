@@ -14,4 +14,12 @@ public class Dataset {
     public int getId() {
         return id;
     }
+
+    public void imprimir() {
+        System.out.println(
+                "Dataset " + id + " - " + nombre + "\n"
+                + "Tamanio: " + tamanio + "\n"
+                + "Tipo: " + tipo + "\n"
+        );
+    }
 }
