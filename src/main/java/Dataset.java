@@ -22,4 +22,12 @@ public class Dataset {
                 + "Tipo: " + tipo + "\n"
         );
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Dataset)) return false;
+        Dataset d = (Dataset) o;
+        return this.id == d.getId();
+    }
+
 }

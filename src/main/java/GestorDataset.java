@@ -2,7 +2,7 @@ import javax.xml.crypto.Data;
 import java.util.LinkedList;
 
 public class GestorDataset {
-    private LinkedList<Dataset> datasets;
+    private LinkedList<Dataset> datasets = new LinkedList<>();
 
     public Dataset buscar(int id) {
         for (Dataset ds : datasets) {
@@ -35,4 +35,5 @@ public class GestorDataset {
             ds.imprimir();
         }
     }
+
 }
