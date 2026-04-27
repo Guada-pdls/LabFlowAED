@@ -1,9 +1,14 @@
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class Experimento {
 
     private int id;
     private Dataset dataset;
     private Modelo modelo;
     private Estado estado;
+    ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
     private double accuracy; // porcentaje de aciertos totales
     private double precision; // calidad de las predicciones positivas
@@ -40,8 +45,15 @@ public class Experimento {
     }
 
     public void ejecutar() {
+        System.out.println("Comenzando experimento " + id);
+
         this.accuracy = Math.random();
         this.precision = Math.random();
+
+        scheduler.schedule(() -> {
+            System.out.println("Experimento finalizado.");
+            scheduler.shutdown(); // Cerramos el scheduler
+        }, 3, TimeUnit.SECONDS);
 
         this.estado = Estado.EJECUTADO;
     }
