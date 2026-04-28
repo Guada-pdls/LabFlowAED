@@ -1,0 +1,11 @@
+id,nombre,tipo,parametro
+2001,LogisticRegression,Clasificador,learning_rate=0.01
+2002,RandomForest,Clasificador,n_trees=100
+2003,DecisionTree,Clasificador,max_depth=10
+2004,SVM,Clasificador,kernel=rbf
+2005,KNN,Clasificador,k=5
+2006,LinearRegression,Regresor,alpha=0.001
+2007,RidgeRegression,Regresor,lambda=0.1
+2008,LassoRegression,Regresor,lambda=0.05
+2009,GradientBoosting,Regresor,n_estimators=200
+2010,NeuralNetwork,Clasificador,layers=3

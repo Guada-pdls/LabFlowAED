@@ -3,11 +3,11 @@ import java.util.Queue;
 
 public class GestorExperimentos {
     private LinkedList<Experimento> ejecutados = new LinkedList<Experimento>();
-    private Queue<Experimento> pendientes;
+    private Queue<Experimento> pendientes = new LinkedList<>();
 
     public Experimento registrarExperimento(int id, Dataset ds, Modelo modelo) {
         Experimento nuevo = new Experimento(id, ds, modelo);
-        ejecutados.add(nuevo);
+        pendientes.add(nuevo);
         return nuevo;
     }
 
@@ -41,5 +41,19 @@ public class GestorExperimentos {
             System.out.println(e.toString());
         }
 
+    }
+
+    public void listarPendientes() {
+        for (Experimento e : pendientes) {
+            System.out.println(e.toString());
+        }
+    }
+
+    public boolean hayEjecutados() {
+            return !ejecutados.isEmpty();
+    }
+
+    public boolean hayPendientes() {
+        return !pendientes.isEmpty();
     }
 }

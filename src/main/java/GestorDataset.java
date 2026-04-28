@@ -32,7 +32,7 @@ public class GestorDataset {
 
     public void listar() {
         for (Dataset ds : datasets) {
-            ds.imprimir();
+            ds.toString();
         }
     }
 

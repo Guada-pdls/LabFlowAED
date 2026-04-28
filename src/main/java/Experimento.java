@@ -51,6 +51,7 @@ public class Experimento {
         this.precision = Math.random();
 
         scheduler.schedule(() -> {
+            System.out.println("Parametros obtenidos del experimento: par1: " + this.accuracy + ", par2: " + this.precision);
             System.out.println("Experimento finalizado.");
             scheduler.shutdown(); // Cerramos el scheduler
         }, 3, TimeUnit.SECONDS);

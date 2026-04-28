@@ -15,12 +15,10 @@ public class Dataset {
         return id;
     }
 
-    public void imprimir() {
-        System.out.println(
-                "Dataset " + id + " - " + nombre + "\n"
+    public String toString() {
+        return "ID Dataset " + id + " - " + nombre + "\n"
                 + "Tamanio: " + tamanio + "\n"
-                + "Tipo: " + tipo + "\n"
-        );
+                + "Tipo: " + tipo + "\n";
     }
 
     @Override
