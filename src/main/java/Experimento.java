@@ -67,4 +67,19 @@ public class Experimento {
                 "\nAccuracy: " + accuracy +
                 "\nPrecision: " + precision + "\n";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Experimento)) return false;
+
+        Experimento e = (Experimento) o;
+        return this.id == e.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
+    }
+
 }
